@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saurabh</title>
+    <link rel="icon" type="image/png" href="avator.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -35,7 +37,7 @@
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#Resume">Resume</a>
+            <a href="#resume">Resume</a>
         </div>
 
 
@@ -56,18 +58,26 @@
 
         <div class="contact" id="contact">
             <div class="form">
-                <form>
+                <form id="contact-form">
 
-                    <input type="text" id="name" name="name" placeholder=" Your Name " value=""><br>
-                    <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" minlength="10" required
-                        placeholder="Enter phone number">
+                    <!-- <label>Your Name</label> -->
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                    <input type="email" id="email" name="email" placeholder="email" value=""><br>
-                    <textarea name="message" id="message" rows="20" cols="10" value="message"
-                        placeholder="🚩"></textarea></br>
-                    <!-- <button type="submit" onclick="SendMail()">SEND</button> -->
+                    <!-- <label>Phone Number</label> -->
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" minlength="10"
+                        placeholder="Enter 10-digit phone" required>
+
+                    <!-- <label>Email</label> -->
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <!-- <label>Message</label> -->
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message..."
+                        required></textarea>
+
+                    <button type="submit">Submit</button>
 
                 </form>
+
 
             </div>
 
@@ -107,7 +117,8 @@
         <div class="about" id="about">
 
             <div class="projects" id="page-fold">
-                <div class="project_logo"> <img src="tic-tac-toy.png"></div>
+                <a href="https://saurabhnegi2035.netlify.app/" class="project_logo" target="_blank"
+                    rel="noopener noreferrer"> <img src="tic-tac-toy.png" alt="game logo"></a>
             </div>
             <div class="projects" id="page-fold">
                 <div class="project_logo"></div>
@@ -128,6 +139,13 @@
 
 
     <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+
 </body>
 
 </html>

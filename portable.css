@@ -101,19 +101,19 @@ body {
     top: 70px;
     left: 0;
     width: 0%;
-    height: 4px;
+    height: 2.5px;
     z-index: 9999;
 
     background: linear-gradient(90deg, #FFFFFF, #FFFFFF, #FFFFFF);
     border-radius: 10px;
 
-    box-shadow: 0 0 10px #c0c5d6, 0 0 15px #aec2d4, 0 0 25px #b2abb1;
+    box-shadow: 0 0 10px #ffffff, 0 0 15px #f5f5f5, 0 0 25px #000000;
 
     transition: height .3s ease;
 }
 
 .scroll-progress.active {
-    height: 8px;
+    height: 5px;
 }
 
 
@@ -234,6 +234,8 @@ h1 :hover {
         font-size: 5vw;
         letter-spacing: .5vw;
         color: #da660d;
+        -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+
     }
 }
 
@@ -329,14 +331,14 @@ h1 :hover {
     }
 
     .intro h1 {
-        font-size: 2vw;
+        font-size: 3vw;
         justify-self: center;
         margin-top: 2px;
     }
 
     .intro p {
         /* font-size: 3vw; */
-        font-size: clamp(12px, 2vw, 24px);
+        font-size: clamp(12px, 2.5vw, 24px);
         margin-top: 6px;
     }
 
@@ -367,7 +369,7 @@ h1 :hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10vw;
+    gap: 4vw;
 }
 
 .form {
@@ -375,13 +377,13 @@ h1 :hover {
     height: 70vh;
     background-color: rgba(50, 50, 93, 0.25);
     border-bottom: 2px solid #F97A00;
-    border-top: 2px solid white;
+    border-top: 1px solid white;
     /* border-radius: 5px 5px 0 0; */
-    margin: 5vw;
+    margin: 2vw;
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 2vw;
+    padding: 2.5vw;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -415,8 +417,7 @@ h1 :hover {
 }
 
 .form button {
-    height: 4vh;
-    align-items: center;
+    height: 5vh;
     width: 10vw;
     background: linear-gradient(135deg, #F97A00, #262323);
     color: #fff;
@@ -428,7 +429,7 @@ h1 :hover {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 8vw;
-    margin-top: 2vw;
+    margin-top: 2vh;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
@@ -448,24 +449,52 @@ button i {
 
 
 .social-link {
-    width: 40vw;
+    width: 50vw;
     height: 70vh;
     background-color: rgba(50, 50, 93, 0.25);
     border-bottom: 2px solid #F97A00;
-    border-top: 2px solid white;
+    border-top: 1px solid white;
     display: flex;
     gap: 2vw;
+    padding: 0vw;
+    padding-top: 6vh;
     flex-direction: column;
-    align-items: start;
-    padding: 1vw;
-    padding-top: 5vh;
+    justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    background-image: url("Bg_social_section.png");
+    background-image: url("Bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.description h1 {
+    width: 100%;
+    height: 6vh;
+    color: white;
+    font-size: 2.5vw;
+    align-items: end;
+    font-family: 'Caveat', cursive;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+
+
+}
+
+.social_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    width: 100%;
+    height: 10vh;
+    border: none;
+
+}
 
 .twitter i {
     font-size: 5vw;
@@ -475,7 +504,7 @@ button i {
 
 .linkedin i {
     font-size: 5vw;
-    color: #0077b5;
+    color: #1e3050;
 }
 
 .whatsapp i {
@@ -486,6 +515,11 @@ button i {
 .gmail i {
     font-size: 5vw;
     color: white;
+}
+
+.github i {
+    font-size: 5vw;
+    color: black;
 }
 
 #hover i:hover {
@@ -524,22 +558,25 @@ button i {
 
     .form form textarea {
         width: 80vw;
-        height: 10vh;
-        margin-top: 5vh;
+        height: 12vh;
+        margin-top: 2vh;
         font-size: 2vh;
     }
 
     .form button {
-        margin-left: 16vw;
+        width: 30vw;
+        margin-left: 25vw;
     }
 
     .social-link {
         width: 100%;
-        height: 80vh;
-        gap: 8vw;
-        padding: 5vw;
-        transition: 2s;
-        justify-content: center;
+        height: 70vh;
+        gap: 2vw;
+        transition: 0.5s;
+    }
+
+    .description h1 {
+        font-size: large;
     }
 
     .twitter i {
@@ -571,8 +608,12 @@ button i {
     }
 
     #hover i:hover {
-        color: rgb(237, 196, 31);
+        color: rgb(237, 120, 31);
         transition: 3s;
+    }
+
+    .github {
+        font-size: 10vw;
     }
 }
 

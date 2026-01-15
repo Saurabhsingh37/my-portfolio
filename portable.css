@@ -481,8 +481,6 @@ button i {
     justify-content: center;
     display: flex;
     border: none;
-
-
 }
 
 .social_icon {
@@ -496,10 +494,82 @@ button i {
 
 }
 
+/* base */
+.social_icon #hover {
+    position: relative;
+    outline: none;
+}
+
+/* tooltip */
+.social_icon #hover::after {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #111;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* arrow */
+.social_icon #hover::before {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #111;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* show tooltip on hover (desktop) */
+.social_icon #hover:hover::after,
+.social_icon #hover:hover::before,
+
+/* show tooltip on tap (mobile) */
+.social_icon #hover:focus::after,
+.social_icon #hover:focus::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* tooltip text */
+.twitter::after {
+    content: "Twitter / X";
+}
+
+.linkedin::after {
+    content: "LinkedIn";
+}
+
+.whatsapp::after {
+    content: "WhatsApp";
+}
+
+.gmail::after {
+    content: "Gmail Web";
+}
+
+.gmail-app::after {
+    content: "Gmail App";
+}
+
+.github::after {
+    content: "GitHub";
+}
+
+
 .twitter i {
     font-size: 5vw;
     color: rgb(0, 0, 0);
-
 }
 
 .linkedin i {
@@ -705,10 +775,100 @@ button i {
     overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25vw;
+    align-items: first baseline;
+    justify-content: first baseline;
+    gap: 1vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding-top: 10vh;
+    padding-left: 1vw;
 }
+
+.skills_heading {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Text */
+.skills_heading h2 {
+    position: absolute;
+    margin-top: 1px;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    /* match page background */
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #00e5ff;
+    white-space: nowrap;
+}
+
+/* Line */
+.skills_heading::before {
+    content: "";
+    position: absolute;
+    /* top: 50%; */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00e5ff, #00ff9d);
+}
+
+
+.skill_divs {
+    display: flex;
+    height: 18vh;
+    width: 14em;
+    border: none;
+    box-shadow: 8px 8px 5px #444444;
+    padding: 8px 12px;
+    /* background-image: linear-gradient(180deg, white, #dddddd 40%, #cccccc); */
+}
+
+.skill_divs {
+    cursor: pointer;
+}
+
+.skill_divs img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    padding: 5px;
+    background: #111;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+.skill_divs:hover img {
+    transform: scale(1.15) rotate(5deg);
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff;
+}
+
+/* Text */
+.skill_divs p {
+    margin-top: 30px;
+    margin-left: 0.6vw;
+    font-size: 14px;
+    font-weight: 500;
+    color: #aaa;
+    transition: color 0.3s ease;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.skill_divs:hover p {
+    color: #00e5ff;
+}
+
 
 .footer {
     width: 100%;
@@ -716,4 +876,32 @@ button i {
     background-color: rgba(0, 0, 0, 0.817);
     margin-top: 100%;
     border-top: 2px solid #F97A00;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-text {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f97a00;
+    transform: translateY(-4px);
+}
+
+.copy {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.7;
+    color: white;
 }

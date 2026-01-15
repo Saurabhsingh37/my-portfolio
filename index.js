@@ -68,7 +68,7 @@ if (typeof gsap === "undefined" || typeof ScrollToPlugin === "undefined") {
     window.gsapWarnShown = true;
   }
 } else {
-  // GSAP is loaded → your GSAP code starts here
+  // GSAP is loaded →  GSAP code starts here
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -173,5 +173,31 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("EmailJS Error:", error);
       }
     );
+  });
+});
+
+//Social icon tooltips styling
+const socialIcons = document.querySelectorAll(".social_icon #hover");
+
+socialIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    // vibration feedback (mobile supported devices)
+    if (navigator.vibrate) {
+      navigator.vibrate(50); // 50ms vibration
+    }
+
+    // auto hide tooltip after 2 seconds
+    setTimeout(() => {
+      icon.blur(); // removes focus -> tooltip hides
+    }, 2000);
+  });
+});
+
+//vibrating skill icon
+document.querySelectorAll(".skill_divs").forEach((skill) => {
+  skill.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(60); // vibration in ms
+    }
   });
 });

@@ -22,7 +22,7 @@ if (menuIcon && dropdownMenu) {
 
   document.querySelectorAll(".dropdown_menu a").forEach((link) => {
     link.addEventListener("click", () =>
-      dropdownMenu.classList.remove("active")
+      dropdownMenu.classList.remove("active"),
     );
   });
 
@@ -53,7 +53,7 @@ window.addEventListener("scroll", () => {
     clearTimeout(scrollBar.removePulse);
     scrollBar.removePulse = setTimeout(
       () => scrollBar.classList.remove("active"),
-      200
+      200,
     );
   }
 });
@@ -63,7 +63,7 @@ window.addEventListener("scroll", () => {
 if (typeof gsap === "undefined" || typeof ScrollToPlugin === "undefined") {
   if (!window.gsapWarnShown) {
     console.warn(
-      "GSAP or ScrollToPlugin not found. Make sure CDN scripts load BEFORE index.js"
+      "GSAP or ScrollToPlugin not found. Make sure CDN scripts load BEFORE index.js",
     );
     window.gsapWarnShown = true;
   }
@@ -116,7 +116,7 @@ if (typeof gsap === "undefined" || typeof ScrollToPlugin === "undefined") {
 
   // ----- Premium Reveal: Zoom + Fade + Slide (slow) -----
   const sections = gsap.utils.toArray(
-    ".home, .contact, .about, .skills, .resume"
+    ".home, .contact, .about, .skills, .resume",
   );
   sections.forEach((section) => {
     // hide initial paint (helps visual jump)
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
       function (error) {
         alert("Failed to send message!");
         console.log("EmailJS Error:", error);
-      }
+      },
     );
   });
 });

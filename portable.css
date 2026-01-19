@@ -470,7 +470,7 @@ button i {
 .description h1 {
     width: 100%;
     height: 6vh;
-    color: white;
+    color: rgb(204, 203, 198);
     font-size: 2.5vw;
     align-items: end;
     font-family: 'Caveat', cursive;
@@ -493,35 +493,209 @@ button i {
     border: none;
 }
 
-.twitter i {
-    font-size: 5vw;
-    color: rgb(0, 0, 0);
+/* ============================= */
+/* BASE ICON STYLE */
+/* ============================= */
+.hover {
+    width: 55px;
+    height: 55px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s ease;
 }
 
-.linkedin i {
-    font-size: 5vw;
-    color: #1e3050;
+.hover i {
+    font-size: 30px;
+    color: #aaa;
+    transition: all 0.4s ease;
 }
 
-.whatsapp i {
-    font-size: 5vw;
-    color: rgb(3, 117, 3);
+/* common hover + tap */
+.hover:hover,
+.hover:focus {
+    transform: translateY(-6px) scale(1.1);
 }
 
-.gmail i {
-    font-size: 5vw;
-    color: white;
+/* ============================= */
+/* TWITTER (X) */
+/* ============================= */
+.twitter.hover:hover,
+.twitter.hover:focus {
+    box-shadow: 0 0 10px #00e5ff,
+        0 0 25px #00e5ff,
+        0 0 45px #00e5ff;
 }
 
-.github i {
-    font-size: 5vw;
-    color: black;
+.twitter.hover:hover i,
+.twitter.hover:focus i {
+    color: #00e5ff;
 }
 
-#hover i:hover {
-    color: rgb(235, 81, 4);
-    transition: 1s;
+/* ============================= */
+/* LINKEDIN */
+/* ============================= */
+.linkedin.hover:hover,
+.linkedin.hover:focus {
+    box-shadow: 0 0 10px #0a66c2,
+        0 0 25px #0a66c2,
+        0 0 45px #0a66c2;
 }
+
+.linkedin.hover:hover i,
+.linkedin.hover:focus i {
+    color: #0a66c2;
+}
+
+/* ============================= */
+/* WHATSAPP */
+/* ============================= */
+.whatsapp.hover:hover,
+.whatsapp.hover:focus {
+    box-shadow: 0 0 10px #25D366,
+        0 0 25px #25D366,
+        0 0 45px #25D366;
+}
+
+.whatsapp.hover:hover i,
+.whatsapp.hover:focus i {
+    color: #25D366;
+}
+
+/* ============================= */
+/* GMAIL (DESKTOP ONLY) */
+/* ============================= */
+.gmail.hover:hover,
+.gmail.hover:focus {
+    box-shadow: 0 0 10px #ff4d4d,
+        0 0 25px #ff4d4d,
+        0 0 45px #ff4d4d;
+}
+
+.gmail.hover:hover i,
+.gmail.hover:focus i {
+    color: #ff4d4d;
+}
+
+/* ============================= */
+/* GMAIL APP (MOBILE ONLY) */
+/* ============================= */
+.gmail-app.hover:hover,
+.gmail-app.hover:focus {
+    box-shadow: 0 0 10px #ff4d4d,
+        0 0 25px #ff4d4d,
+        0 0 45px #ff4d4d;
+}
+
+.gmail-app.hover:hover i,
+.gmail-app.hover:focus i {
+    color: #ff4d4d;
+}
+
+/* ============================= */
+/* GITHUB */
+/* ============================= */
+.github.hover:hover,
+.github.hover:focus {
+    box-shadow: 0 0 10px #ffffff,
+        0 0 25px #ffffff,
+        0 0 45px #ffffff;
+}
+
+.github.hover:hover i,
+.github.hover:focus i {
+    color: #ffffff;
+}
+
+/* ============================= */
+/* RESPONSIVE VISIBILITY RULES */
+/* ============================= */
+
+/* Desktop: show Gmail web, hide Gmail app */
+.gmail-app {
+    display: none;
+}
+
+/* Mobile (≤600px): show Gmail app, hide Gmail web */
+@media (max-width: 600px) {
+    .gmail {
+        display: none;
+    }
+
+    .gmail-app {
+        display: flex;
+    }
+}
+
+/* ============================= */
+/* TOOLTIP BASE */
+/* ============================= */
+/* tooltip box */
+.hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #000;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* tooltip arrow */
+.hover::before {
+    content: "";
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #000;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* show tooltip */
+.hover:hover::after,
+.hover:hover::before,
+.hover:focus::after,
+.hover:focus::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.twitter.hover:hover::after {
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+.linkedin.hover:hover::after {
+    box-shadow: 0 0 10px #0a66c2;
+}
+
+.whatsapp.hover:hover::after {
+    box-shadow: 0 0 10px #25D366;
+}
+
+.gmail.hover:hover::after,
+.gmail-app.hover:hover::after {
+    box-shadow: 0 0 10px #ff4d4d;
+}
+
+.github.hover:hover::after {
+    box-shadow: 0 0 10px #ffffff;
+}
+
+
 
 @media (max-width:600px) {
     .contact {
@@ -674,6 +848,102 @@ button i {
     scale: 1.2;
 }
 
+/* ============================= */
+/* ABOUT / PROJECT SECTION */
+/* ============================= */
+.about {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ============================= */
+/* PROJECT CARD */
+/* ============================= */
+.projects {
+    background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+    border-radius: 18px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* neon border */
+.projects::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, #00e5ff, #ff4dff, #25D366) border-box;
+    -webkit-mask: linear-gradient(#000 0 0) padding-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* hover effect */
+.projects:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.projects:hover::before {
+    opacity: 1;
+}
+
+/* ============================= */
+/* PROJECT LOGO */
+/* ============================= */
+.project_logo {
+    width: 130px;
+    height: 130px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+    transition: all 0.4s ease;
+}
+
+.project_logo img {
+    width: 70%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6));
+}
+
+/* logo hover */
+.projects:hover .project_logo {
+    box-shadow: 0 0 20px #00e5ff,
+        0 0 40px #00e5ff;
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 600px) {
+    .projects {
+        height: 240px;
+    }
+
+    .project_logo {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
 @media(max-width:600px) {
     .about {
         flex-direction: column;
@@ -724,12 +994,34 @@ button i {
     margin-bottom: 30px;
 }
 
+
 .skills_heading h2 {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
     display: inline-block;
+    /* position: absolute; */
+    padding: 12px 25px;
+
+    /* text effect */
+    background: linear-gradient(90deg, #00e5ff, #00ff9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* smooth animation */
+    transition: all 0.4s ease;
 }
+
+/* hover magic ✨ */
+.skills_heading h2:hover::after {
+    width: 90%;
+}
+
+.skills_heading h2:hover {
+    letter-spacing: 5px;
+}
+
 
 .skill_divs {
     display: flex;
